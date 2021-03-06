@@ -18,8 +18,6 @@ public class HighestSalary {
         WebElement tableEmployeeDetail = helpers.whenWebTableFound(TableSearchPage.getTableEmployeeDetails());
         List<WebElement> rowsList = tableEmployeeDetail.findElements(By.tagName("tr"));
 
-        String strSalary = null;
-        List<Integer> salaryList = null;
         int myTempHighestSalary = 0;
 
         // traversing through all the rows
@@ -36,7 +34,6 @@ public class HighestSalary {
 
         }
 
-        //Truth.assertThat(myTempHighestSalary).isEqualTo(Integer.parseInt(aHighestSalary));
         BDDSoftAssertions softAssert = new BDDSoftAssertions();
         softAssert.then(myTempHighestSalary).isEqualTo(Integer.parseInt(aHighestSalary)).as("Highest salary of Software Engineer not equal " + aHighestSalary);
         softAssert.assertAll();

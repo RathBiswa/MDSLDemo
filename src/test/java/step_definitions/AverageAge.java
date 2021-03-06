@@ -43,12 +43,11 @@ public class AverageAge {
         }
 
         int AverageAge = strTotalAge / rowsList.size();
-        //Truth.assertThat(AverageAge).isEqualTo(aAgeValue);
+
         BDDSoftAssertions softAssert = new BDDSoftAssertions();
         softAssert.then(AverageAge).isEqualTo(aAgeValue).
                 as("Average age of all employees in  " + theCity + " is not equal to 46");
         helpers.CloseBrowser();
         softAssert.assertAll();
-
     }
 }

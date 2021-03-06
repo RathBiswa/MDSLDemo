@@ -13,10 +13,8 @@ public class Helpers {
     private static WebDriver driver = new ChromeDriver();
 
     public void launchBrowser() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "C:\\Automation\\chromedriver.exe");
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
-        //driver.get("https://www.seleniumeasy.com");
         Thread.sleep(500);
     }
 
@@ -55,6 +53,7 @@ public class Helpers {
         driver.findElement(By.xpath(aWebElement)).click();
         Thread.sleep(1000);
     }
+
     public WebElement whenWebTableFound(@NotNull String aWebElement) throws InterruptedException {
         WebElement table = driver.findElement(By.xpath(aWebElement));
         Thread.sleep(1000);
